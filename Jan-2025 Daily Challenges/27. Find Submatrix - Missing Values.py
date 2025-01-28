@@ -80,3 +80,27 @@ Output:
 -1 -1 -1 -1 91 27
 60 15 13 29 53 77
 """
+r,c=map(int,input().split())
+l1=[list(map(int,input().split())) for i in range(r)]
+l2=[list(map(int,input().split())) for i in range(r)]
+row=[]
+for i in range(r):
+    if len(l1[i])!=c:
+        row.append(i)
+
+i=row[0]
+s=0
+while s<len(l1[i]) and l1[i][s]==l2[i][s]:
+    s+=1
+e,t=len(l1[i])-1,len(l2[i])-1 
+while e>=0 and l1[i][e]==l2[i][t]:
+    e-=1
+    t-=1
+for j in range(row[0]+1,row[1]):
+    l1[j][s+c-len(l1[row[0]])-1]=-1
+    l1[j][s]=-1
+for i in row:
+    l1[i]=l1[i][:s]+[-1]*(c-len(l1[i]))+l1[i][e+1:]
+for i in l1:
+    print(*i)
+    
