@@ -1,4 +1,4 @@
-/*
+"""
 The program must accept two integer matrices M1 and M2 as the input. Both M1 and M2 represent the same matrix of size R*C, but the top and bottom edges of a submatrix are missing in M1, the left and right edges of the same submatrix are missing in M2. The program must find the submatrix and replace its border elements with -1. Finally, the program must print the R*C matrix as the output.
 Note: The minimum size of the submatrix is 3*3.
 
@@ -79,4 +79,4 @@ Output:
 -1 29 86 -1 67 86
 -1 -1 -1 -1 91 27
 60 15 13 29 53 77
-*/
+"""
