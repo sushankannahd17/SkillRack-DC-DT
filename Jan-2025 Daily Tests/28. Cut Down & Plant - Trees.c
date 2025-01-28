@@ -7,5 +7,33 @@ on the following conditions.
 The value of T is also passed as the input to the program. The program must print the number of trees remaaining in the garden
 after cutting down T trees as output.
 
+Boundary Condition(s):
+1 <= N <= 100
+1 <= Height of each tree <= 50
+1 <= T <= 1000
 
+Input Format:
+The first line contains N
+The second lines contains N integer values separated by a space
+The third line contains T.
+
+Output Format:
+The first line contains the number of trees remaining in the garden after cutting down T trees.
+
+Example Input / Output 1:
+4
+4 3 5 2
+6
+
+Output:
+11
+
+Explanation:
+After cutting down the 1st tree, the trees in the garden become 3 5 2 2 1
+After cutting down the 2nd tree, the trees in the garden become 5 2 2 1 1 2 3
+After cutting down the 3rd tree, the trees in the garden become 2 2 1 1 2 3 1 2 3 4 5
+After cutting down the 4th tree, the trees in the garden become 2 1 1 2 3 1 2 3 4 5 1
+After cutting down the 5th tree, the trees in the garden become 1 1 2 3 1 2 3 4 5 1 1
+After cutting down the 6th tree, the trees in the garden become 1 2 3 1 2 3 4 5 1 1 1
+Now 11 trees remaining in the graden, so 11 is printed as the output
 */
