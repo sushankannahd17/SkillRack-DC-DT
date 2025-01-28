@@ -65,28 +65,28 @@ Output: 12
 #define MAX 25
 
 void main() {
-    int R, C, M, buckets[MAX][MAX], overflow, filled, seconds;
-    scanf("%d %d", &R, &C);
+    int R, C, M, buckets[MAX][MAX], overflow, filled, seconds;          // Initializing Variables
+    scanf("%d %d", &R, &C);                                             // Getting the input of the number of rows and columns
     for (int i = 0; i < R; i++) {
         for (int j = 0; j < C; j++) {
-            scanf("%d",&buckets[i][j]);
+            scanf("%d",&buckets[i][j]);                                 // Getting the input for the 2D array buckets
         }
     }
-    scanf("%d", &M);
+    scanf("%d", &M);                                                    // Getting the input of the maximum capacity
 
     seconds = 0, filled = 0;
 
     while (filled < R*C) {
         for (int i = 0; i < C; i++) {
-            buckets[0][i]++;
+            buckets[0][i]++;                                            // Fills the buckets in the first row
         }
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
                 if (buckets[i][j] > M) {
-                    overflow = buckets[i][j] - M;
-                    buckets[i][j] = M;
+                    overflow = buckets[i][j] - M;                       // Finds the overflowed balls
+                    buckets[i][j] = M;                                  // Filling the buckets with the maximum capacity
                     if (i + 1 < R) {
-                        buckets[i][j] += 2 * overflow;
+                        buckets[i][j] += 2 * overflow;                  // Fills the buckets 
                     }
                 }
             }
@@ -96,12 +96,12 @@ void main() {
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
                 if (buckets[i][j] == M) {
-                    filled++;
+                    filled++;                                          // Checks if all the buckets are filled
                 }
             }
         }
 
-        seconds++;
+        seconds++;                                                      // Calculates the seconds of the balls flowing
     }
 
     printf("%d", seconds);
